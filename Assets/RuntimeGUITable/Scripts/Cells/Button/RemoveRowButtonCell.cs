@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using System.Reflection;
 
 namespace UnityUITable
@@ -11,7 +9,6 @@ namespace UnityUITable
 
 		protected override void OnButtonClicked ()
 		{
-
 			object obj = new PropertyOrFieldInfo(table.targetCollection.GetMember()).GetValue(table.targetCollection.GetComponent());
 			MethodInfo deleteMethod = obj.GetType().GetMethod("RemoveAt");
 			if (deleteMethod != null)
